@@ -1,76 +1,57 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.9</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
-	<description>Demo project for Spring Boot</description>
-	<properties>
-		<java.version>11</java.version>
-	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-
-								
-			<plugin>
-				<groupId>com.microsoft.azure</groupId>
-				<artifactId>azure-webapp-maven-plugin</artifactId>
-				<version>2.2.0</version>
-				<configuration>
-					<schemaVersion>v2</schemaVersion>
-					<auth>
-						<client>16677152-cce7-4aee-bb19-7e09ff3edd1c</client>
-						<tenant>7d49e97a-1b9b-4907-81aa-24ff1ddf0bda</tenant>
-						<key>zZ88Q~QDRlxklsJA0zivmahIbpiovhPEG4R6gbh4</key>
-						<environment>azure</environment>
-					</auth>
-					<subscriptionId>e1b5b156-2eea-4eba-b8e0-5c534f93e052</subscriptionId>
-					<resourceGroup>ms-actions-rg</resourceGroup>
-					<appName>webapp-koo</appName>
-					<pricingTier>F1</pricingTier>
-					<region>koreacentral</region>
-					<runtime>
-						<os>Linux</os>
-						<javaVersion>Java 17</javaVersion>
-					</runtime>
-					<deployment>
-						<resources>
-							<resource>
-								<directory>${project.basedir}/target</directory>
-								<includes>
-									<include>*.jar</include>
-								</includes>
-							</resource>
-						</resources>
-					</deployment>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>example.demo</groupId>
+  <artifactId>helloworld</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>helloworld Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+	<finalName>helloworld</finalName>
+	<plugins>
+		<plugin>
+			<groupId>com.microsoft.azure</groupId>
+			<artifactId>azure-webapp-maven-plugin</artifactId>
+			<version>2.2.0</version>
+			<configuration>
+				<schemaVersion>v2</schemaVersion>
+				<auth>
+					<client>16677152-cce7-4aee-bb19-7e09ff3edd1c</client>
+					<tenant>7d49e97a-1b9b-4907-81aa-24ff1ddf0bda</tenant>
+					<key>zZ88Q~QDRlxklsJA0zivmahIbpiovhPEG4R6gbh4</key>
+					<environment>azure</environment>
+				</auth>
+				<subscriptionId>e1b5b156-2eea-4eba-b8e0-5c534f93e052</subscriptionId>
+				<resourceGroup>ms-actions-rg</resourceGroup>
+				<appName>webapp-koo</appName>
+				<pricingTier>F1</pricingTier>
+				<region>koreacentral</region>
+				<runtime>
+					<os>Linux</os>
+					<javaVersion>Java 11</javaVersion>
+				</runtime>
+				<deployment>
+					<resources>
+						<resource>
+							<directory>${project.basedir}/target</directory>
+							<includes>
+							<include>*.jar</include>
+							</includes>
+						</resource>
+					</resources>
+				</deployment>
+			</configuration>
+		</plugin>
+	</plugins>
+  </build>
 </project>
+
